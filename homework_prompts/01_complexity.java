@@ -25,16 +25,16 @@ class Main {
 
   Reduce the following into it's Big-O order of magnitude.
 
-  1. 5 + N                    Answer:
-  2. N + N^2                  Answer:
-  3. 15N + 13N                Answer:
-  4. 10000                    Answer:
-  5. log(N) + 1               Answer:
-  6. log(N) * 3 + 14N + 3     Answer:
-  7. Nlog(N) + 3N^2           Answer:
-  8. N^3 + log(N^4)           Answer:
-  9. N! + 180000N^2           Answer:
-  10. 15002^N                 Answer:
+  1. 5 + N                    Answer: O(n)
+  2. N + N^2                  Answer: O(n^2)
+  3. 15N + 13N                Answer: O(n)
+  4. 10000                    Answer: O(1)
+  5. log(N) + 1               Answer: O(log(n))
+  6. log(N) * 3 + 14N + 3     Answer: O(n)
+  7. Nlog(N) + 3N^2           Answer: O(n^2)
+  8. N^3 + log(N^4)           Answer: O(n^3)
+  9. N! + 180000N^2           Answer: O(n!)
+  10. 15002^N                 Answer: O(2^n)
   */
 
   /**
@@ -57,8 +57,8 @@ class Main {
   [9, 83, 74], 8 --> -1
   [6, 4, 7, 9, 7, 8, 2, 4, 3], 7 --> 2
 
-  Time Complexity:
-  Auxiliary Space Complexity:
+  Time Complexity: O(n) where n is the number of elements in the array
+  Auxiliary Space Complexity: O(1)
 
   */
   public static int indexOf(int[] arr, int target) {
@@ -84,8 +84,8 @@ class Main {
   [9, 83, 74] --> [74]
   [6, 4, 7, 9, 7, 8, 2, 4, 3] --> [6, 4, 8, 2, 4]
 
-  Time Complexity:
-  Auxiliary Space Complexity:
+  Time Complexity: O(n)
+  Auxiliary Space Complexity: O(m) where m is the number of even integers found in the array 
 
   */
   public static ArrayList evens(int [] arr) {
@@ -112,8 +112,9 @@ class Main {
   'hello' --> ['h', 'e', 'l', 'l', 'o']
   'foo' --> ['f', 'o'. 'o']
 
-  Time Complexity:
-  Auxiliary Space Complexity:
+  Time Complexity: O(n)
+  Auxiliary Space Complexity: O(n)
+  n is the number of letters in the input string
 
   */
   public static ArrayList split(String str) {
@@ -138,8 +139,8 @@ class Main {
   [0, 1, -1] --> 0
   [] --> 0
 
-  Time Complexity:
-  Auxiliary Space Complexity:
+  Time Complexity: O(n) where n is the number of elements in the array
+  Auxiliary Space Complexity: O(1)
 
   */
   public static int sum(int[] arr) {
@@ -165,8 +166,11 @@ class Main {
   [12, 25, 40], [20, 37, 45] --> [12, 20, 25, 37, 40, 45]
   [10, 13, 24], [12, 35] --> [10, 12, 13, 24, 35]
 
-  Time Complexity:
-  Auxiliary Space Complexity:
+  Time Complexity: O(n + m) 
+  Auxiliary Space Complexity: O(n + m)
+  n is the size of arr1 
+  m is the size of arr2
+  
 
   */
   public static int[] merge(int[] arr1, int[] arr2) {
@@ -205,8 +209,8 @@ class Main {
   [8, 1, 3, 4, 6, 9] --> [1, 3, 4, 6, 8, 9]
   [4, 0, 1, 5, 6] --> [0, 1, 4, 5, 6]
 
-  Time Complexity:
-  Auxiliary Space Complexity:
+  Time Complexity: O(n)
+  Auxiliary Space Complexity: O(max - min)
 
   */
   public static int[] countingSort (int[] arr, int min, int max) {
@@ -242,9 +246,9 @@ class Main {
   [5, 7, 10, 12, 14], 7 --> 1
   [2, 4, 8, 9, 15], 3 --> -1
 
-  Time Complexity:
-  Auxiliary Space Complexity:
-
+  Time Complexity: O(log(n))
+  Auxiliary Space Complexity: O(1)
+  n is size of arr
   */
   public static int binarySearch(int[] arr, int val) {
     int low = 0;
@@ -279,9 +283,10 @@ class Main {
   1 --> 1 (1)
   9 --> 362880 (9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1)
 
-  Time Complexity:
-  Auxiliary Space Complexity:
-
+  Time Complexity: O(n)
+  Auxiliary Space Complexity: O(n)
+  
+  
   */
   public static int factorial(int n) {
     if(n <= 1) {
@@ -293,8 +298,8 @@ class Main {
 
  /*  First Times Last
   *
-  *  Time Complexity:
-  *  Auxiliary Space Complexity:
+  *  Time Complexity: O(1)
+  *  Auxiliary Space Complexity: O(1)
   */
   public static int firstTimesLast(int[] arr) {
     int result = 0;
@@ -309,8 +314,9 @@ class Main {
 
   /*  Most Frequent Occurrence
    *
-   *  Time Complexity:
-   *  Auxiliary Space Complexity:
+   *  Time Complexity: O(n)
+   *  Auxiliary Space Complexity: O(n)
+      n is size of str
    */
   public static char mostFrequentOccurrence(String str) {
     String lowerString = str.toLowerCase();
@@ -341,8 +347,8 @@ class Main {
 
   /* Print Unordered Pairs
    *
-   *  Time Complexity:
-   *  Auxiliary Space Complexity:
+   *  Time Complexity: O(n^2)
+   *  Auxiliary Space Complexity: O(1)
    */
   public static void printUnorderedPairs(int[] arr) {
    for (int i = 0; i < arr.length; i++) {
@@ -355,8 +361,8 @@ class Main {
 
   /* Sorted Array Search
    *
-   *  Time Complexity:
-   *  Auxiliary Space Complexity:
+   *  Time Complexity: O(long(n))
+   *  Auxiliary Space Complexity: O(1)
    */
   public static boolean sortedArraySearch(int[] sortedArray, int target) {
     int start = 0;
@@ -380,8 +386,10 @@ class Main {
 
   /**
    *  Problem 5
-   *  Time Complexity:
-   *  Auxiliary Space Complexity:
+   *  Time Complexity: O(n*m)
+   *  Auxiliary Space Complexity: O(n*m)
+      n is size of arr1
+      m is size of arr2
    */
   public static int[][] makeCombinedMatrix(int[] arr1, int[] arr2) {
     int[][] result = new int[arr1.length][arr2.length];
@@ -398,8 +406,8 @@ class Main {
  /**
   * Problem 6:
   *
-  *  Time Complexity:
-  *  Auxiliary Space Complexity:
+  *  Time Complexity: O(1)
+  *  Auxiliary Space Complexity: O(1)
   */
 
   public static void isThereCat(Map<String, String> map) {
@@ -414,8 +422,8 @@ class Main {
  /**
   * Problem 7:
   *
-  *  Time Complexity:
-  *  Auxiliary Space Complexity:
+  *  Time Complexity: O(1)
+  *  Auxiliary Space Complexity: O(1)
   */
   public static int[] powerOfThrees(int n) {
     int[] result = new int[3];
@@ -435,8 +443,8 @@ class Main {
   /**
    * Problem 8:
    *
-   *  Time Complexity:
-   *  Auxiliary Space Complexity:
+   *  Time Complexity: O(n^2)
+   *  Auxiliary Space Complexity: O(1)
    */
   public static boolean findDuplicate(int[] arr) {
     int len = arr.length;
@@ -461,8 +469,8 @@ class Main {
   /**
    * Problem 9:
    *
-   *  Time Complexity:
-   *  Auxiliary Space Complexity:
+   *  Time Complexity: O(n*m)
+   *  Auxiliary Space Complexity: O(every occurrence of integers that are found in both arr1 and arr2)
    */
   public static ArrayList<Integer> intersectionPoints(int[] arr1, int[] arr2) {
     ArrayList<Integer> results = new ArrayList<Integer>();
@@ -482,8 +490,8 @@ class Main {
   /**
    *  Problem 10:
    *
-   *  Time Complexity:
-   *  Auxiliary Space Complexity:
+   *  Time Complexity: O(N)
+   *  Auxiliary Space Complexity: O(N)
    */
   public static int nthFibonacci(int n) {
     if(n < 2){ return n; }
@@ -513,15 +521,21 @@ class Main {
    */
   public static ArrayList<Integer> findAllDuplicates(int[] arr) {
     //YOUR WORK HERE
-    return null;
+    HashSet<Integer> ret = new HashSet<>();
+    HashSet<Integer> set = new HashSet<>();
+    for(int i : arr){
+       if(set.contains(i))ret.add(i);
+       set.add(i);
+    }
+    return new ArrayList<Integer>(ret);
   }
 }
 
 
 /* Nth Fibonacci
  *
- *  Time Complexity:
- *  Auxiliary Space Complexity:
+ *  Time Complexity: O(N)
+ *  Auxiliary Space Complexity: O(N) + stack space taken which won't exceed O(N)
  */
 class NthFib {
 
@@ -550,5 +564,4 @@ class NthFib {
     cache.put(index, solution);
     return solution;
   }
-
 }
