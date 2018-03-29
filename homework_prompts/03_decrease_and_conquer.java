@@ -29,10 +29,18 @@ class Problems {
  * `[0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1] --> 7`
  */
 
-  public static int numberOfOnes(int[] arr) {
-    // YOUR WORK HERE
-    return -1;
+  public static int numberOfOnes(int[] arr){
+    // YOUR WORK HERE        
+        return arr.length - work(arr, 0, arr.length-1);
   }
+    
+  public static int work(int[] nums, int l, int r){
+        if(l > r)return l;
+        int mid = l + (r-l)/2;
+        
+        if(nums[mid] == 1)return work(nums, l, mid-1);
+        else return work(nums, mid+1, r);
+   }
 
 /*
  * Closest Value
@@ -56,10 +64,23 @@ class Problems {
  * `[1, 10, 22, 59, 67, 72, 100], 70 --> 72`
  */
 
-public static int closestValue(int[] arr, int target) {
-  // YOUR WORK HERE
-  return -1;
+public static int closestValue(int[] nums, int target) {
+      // YOUR WORK HERE
+        int index = work(nums, target, 0, nums.length-1);
+        if(index >= nums.length)return nums[nums.length-1];
+        if(index <= 0)return nums[0];
+        System.out.println(index);
+        return (Math.abs(target - nums[index]) < Math.abs(target - nums[index-1]))? nums[index] : nums[index-1];
 }
+
+public static int work(int[] nums, int target, int l, int r){
+        if(l > r)return l;
+        int mid = l + (r-l)/2;
+        
+        if(nums[mid] >= target)return work(nums, target, l, mid-1);
+        else return work(nums, target, mid+1, r);
+}
+    
 
 
 /*
@@ -114,8 +135,16 @@ public static Double squareRoot(Double n) {
 */
 
 public static int greaterValues(int[] arr, int target) {
-  // YOUR WORK HERE
-  return -1;
+      // YOUR WORK HERE
+      return arr.length - work(arr, target, 0, arr.length-1);
+    }
+    
+public static int work(int[] nums, int target, int l, int r){
+        if(l > r)return l;
+        int mid = l + (r-l)/2;
+        
+        if(nums[mid] <= target) return work(nums, target, mid+1, r);
+        else return work(nums, target, l, mid-1);
 }
 
 
@@ -181,8 +210,7 @@ private static boolean binarySearch(int[] nums, int start, int end, int target) 
  */
 
 public static int kthLargest(int k, int[] arr) {
-  // YOUR WORK HERE
-  return -1;
+
 }
 
 
