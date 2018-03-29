@@ -31,7 +31,15 @@ class Problems {
 
    public static ArrayList unique(int[] arr) {
       // YOUR WORK HERE
-      return new ArrayList<>();
+      HashSet<Integer> ret = new HashSet<>();
+      HashSet<Integer> visited = new HashSet<>();
+     
+      for(int i : arr){
+        if(visited.contains(i))ret.remove(i);
+        else ret.add(i);
+        visited.add(i);
+      }
+      return new ArrayList<>(ret);
    }
 
    /**
@@ -61,7 +69,20 @@ class Problems {
 
     public static HashMap wordCount(String sentence) {
       // YOUR WORK HERE
-      return new HashMap<String, Integer>();
+      sentence = sentence.toLowerCase();
+      String s = "";
+      for(char c : sentence.toCharArray()){
+        if(c == ' ' || (c >= 'a' && c <= 'z'))s += c;
+      }
+      
+      
+      HashMap<String, Integer> ret = new HashMap<>();
+      
+      for(String i : s.split(" ")){
+        ret.put(i, ret.getOrDefault(i,0)+1); 
+      }
+      
+      return ret;
     }
 
   /**
@@ -85,9 +106,21 @@ class Problems {
    * `'bbrr' --> 0`
    */
 
-     public static int rgb(String string) {
+     public static int rgb(String s) {
        // YOUR WORK HERE
-       return -1;
+        int[] freq = new int[3];
+        
+        for(int i = 0; i < s.length(); i++){
+            char c = s.charAt(i);
+            if(c == 'r')freq[0]++;
+            else if(c == 'g')freq[1]++;
+            else freq[2]++;
+        }
+        
+        int ret = Integer.MAX_VALUE;
+        
+        for(int i : freq)ret = Math.min(ret, i);
+        return ret;
      }
 
    /**
@@ -111,9 +144,20 @@ class Problems {
     * `6, [6, 4, 2, 1] --> [3, 5]`
     */
 
-    public static ArrayList missingNumber(int n, int[] arr) {
+   public static ArrayList<Integer> missingNumber(int n, int[] arr) {
       // YOUR WORK HERE
-      return new ArrayList<>();
+      int[] nums = new int[n+1];
+      
+      for(int i : arr)nums[i]++;
+      
+      
+      ArrayList<Integer> ret =  new ArrayList<>();
+      
+      for(int i = 1; i <= n; i++){
+        if(nums[i] == 0)ret.add(i);
+      }
+      
+      return ret;
     }
 
   /**
@@ -135,10 +179,25 @@ class Problems {
    * `one --> eno`
    */
 
-   public static String letterSort(String string) {
+   public static String letterSort(String s) {
      // YOUR WORK HERE
-     return "";
+        int[] nums = new int[26];
+        
+        for(char c : s.toCharArray()){
+            nums[c-'a']++;
+        }
+        
+        String ret = "";
+     
+        for(int i = 0; i < nums.length; i++){
+            while(nums[i] > 0){
+                ret += (char)(i+'a');
+                nums[i]--;
+            }
+        }
+        return ret;
    }
+
 
    /**
     * Character Mode
@@ -162,10 +221,29 @@ class Problems {
     * 'noon' --> 'no'
     */
 
-    public static String characterMode(String string) {
-      // YOUR WORK HERE
-      return "";
-    }
+    public static String letterSort(String s) {
+     // YOUR WORK HERE
+        s = s.toLowerCase();
+        int[] nums = new int[26];
+        for(char c : s.toCharArray()){
+            if(c >= 'a' && c <= 'z') nums[c-'a']++;
+        }
+
+        int max = 1;
+        String ret = "";
+        
+        for(int i = 0; i < nums.length; i++){
+            if(nums[i] > max){
+                ret = ""+(char)(i+'a');
+                max = nums[i];
+            }
+            else if(nums[i] == max){
+                ret += (char)(i+'a');
+            }
+        }
+        
+        return ret;
+   }
 
   /**
    * Sort Digits
@@ -191,8 +269,25 @@ class Problems {
 
    public static int sortDigits(int n) {
     // YOUR WORK HERE
-    return -1;
-   }
+        int[] nums = new int[10];
+        
+        while(n > 0){
+            int i = n%10;
+            nums[i]++;
+            n /= 10;
+        }
+        
+        int ret = 0;
+
+        for(int i = 1; i < nums.length; i++){
+            while(nums[i] > 0){
+                ret *= 10;
+                ret += i;
+                nums[i]--;
+            }
+        }
+        return ret;
+    }
 
    /**
     *  Get Duplicates
@@ -214,10 +309,17 @@ class Problems {
     *  [1, 2, 3, 4] --> []
     */
 
-   public static ArrayList getDuplicates(int[] arr) {
-     // YOUR WORK HERE
-     return new ArrayList<>();
-   }
+   public static ArrayList<Integer> findAllDuplicates(int[] arr) {
+    //YOUR WORK HERE
+    HashSet<Integer> ret = new HashSet<>();
+    HashSet<Integer> set = new HashSet<>();
+    for(int i : arr){
+       if(set.contains(i))ret.add(i);
+       set.add(i);
+    }
+    return new ArrayList<Integer>(ret);
+  }
+
 
    /**
     *  Anagram Pair
@@ -243,9 +345,21 @@ class Problems {
     *  "racecar", "aaccrres" --> false
     */
 
-    public static Boolean anagramPair(String string1, String string2) {
-      // YOUR WORK HERE
-      return false;
+    public boolean anagramPair(String s, String t) {
+        if(s.length() != t.length())return false;
+        int[] a = new int[26];
+        int[] b = new int[26];
+        
+        for(int i = 0; i < s.length(); i++){
+            a[s.charAt(i) - 'a']++;
+            b[t.charAt(i) - 'a']++;
+        }
+        
+        for(int i = 0; i < a.length; i++){
+            if(a[i] != b[i])return false;
+        }
+        
+        return true;
     }
 
     /**
@@ -274,10 +388,24 @@ class Problems {
      *  `"cat" --> false`
      */
 
-  public static Boolean anagramPalindrome(String str) {
+  public static boolean anagramPalindrome(String s){
     // YOUR WORK HERE
-    return false;
-  }
+        int[] count = new int[26];
+    
+        for(int i = 0; i < s.length(); i++){
+          count[s.charAt(i) - 'a']++;
+        }
+
+        int odds = 0;
+
+        for(int i : count){
+          if(i%2 != 0){
+            if(odds > 0) return false;
+            odds++;
+          }
+        }
+        return true;
+    }
 }
 
 
