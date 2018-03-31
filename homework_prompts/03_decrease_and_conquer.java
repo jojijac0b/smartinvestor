@@ -107,9 +107,27 @@ public static int work(int[] nums, int target, int l, int r){
 
 
 public static Double squareRoot(Double n) {
-  // YOUR WORK HERE
-  return -1.0;
+  double value = work(0, n, n);
+        
+  return (double)Math.round(value * 1000000d) / 1000000d;
 }
+  
+public static Double work(double l, double r, double target){
+        if(l > r)return l;
+        //System.out.println(l + " " + r);
+        double mid = (l+r)/2;
+        System.out.println(l + " " + r + " " + mid);
+        //mid *= mid;
+        //System.out.println(mid);
+        if((mid*mid) == target) return mid;
+        else if((mid*mid) > target){
+            return work(l, mid - 0.000001, target);
+        }
+        else {
+            return work(mid + 0.000001, r, target);
+        }
+ }
+
 
 
 /*
