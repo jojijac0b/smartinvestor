@@ -48,10 +48,17 @@ class PrintArray {
 
   public static void compute(int[] arr) {
     // YOUR WORK HERE
+    computeHelper(arr, 0);
   }
 
-  public static void computeHelper(int[] arr, int index) {
+  public static void computeHelper(int[] nums, int index) {
     // YOUR WORK HERE
+    if(index >= nums.length)return;
+    
+    System.out.println(nums[index]);
+    
+    computeHelper(nums, index+1);
+    
   }
 }
 
@@ -73,10 +80,14 @@ class PrintReverse {
 
   public static void compute(int[] arr) {
     // YOUR WORK HERE
+    traverse(arr, index);
   }
 
   private static void traverse(int[] arr, int index) {
     // YOUR WORK HERE
+    if(index < 0)return;
+    System.out.println(arr[index]);
+    traverse(arr, index-1);
   }
 }
 
@@ -95,6 +106,15 @@ class ReverseString {
   public static String compute(String str) {
     // YOUR WORK HERE
     return "";
+  }
+  
+  public static void work(char[] ch, int l, int r){
+    if(l > r)return;
+    char c = ch[l];
+    ch[r] = ch[l];
+    ch[l] = c;
+    work(ch, l+1, r-1);
+    
   }
 
 }
@@ -116,14 +136,26 @@ class ReverseString {
  *          {{1,2}, {3,4}, {5, -1}}
  */
 class ArrayPairs {
-
+  
+  
+  static int[][] ret;
+  static int index = 0;
   public static int[][] compute(int[] arr) {
     // YOUR WORK HERE
-    return new int[0][0];
+    ret = new int[(arr.length%2 == 0) ? arr.length/2 : arr.length/2 + 1][2];
+    
+    work(arr, 0);
+    
+    return ret;
   }
-
-
-
+  
+  public static void work(int[] nums, int i){
+    if(i >= nums.length)return;
+    
+    ret[index][0] = nums[i];
+    if((i+1) < nums.length) ret[index++][1] = nums[i+1];
+    work(nums, i+2);
+  }
 }
 
 
@@ -138,10 +170,22 @@ class ArrayPairs {
  *          {1, 2, 3, 4, 5, 6, 7, 8, 9}
  */
 class Flatten {
-
+  static int[] ret;
+  static int index;
   public static int[] compute(int[][] matrix) {
     // YOUR WORK HERE
-    return new int[0];
+    ret = new int[matrix.length*matrix[0].length];
+    index = 0;
+    work(matrix, 0);
+    return ret;
+  }
+  
+  public static void work(int[][] nums, int i){
+    if(i >= nums.length)return;
+    
+    for(int j : nums[i]) ret[index++] = j;
+    
+    work(nums, i+1);
   }
 
 
@@ -163,6 +207,8 @@ class Power {
     // YOUR WORK HERE
     return -1;
   }
+  
+  
 
 }
 
