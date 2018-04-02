@@ -105,12 +105,14 @@ class ReverseString {
 
   public static String compute(String str) {
     // YOUR WORK HERE
-    return "";
+    char[] ch = str.toCharArray();
+    work(ch, 0, ch.length-1);
+    return new String(ch);
   }
   
   public static void work(char[] ch, int l, int r){
     if(l > r)return;
-    char c = ch[l];
+    char c = ch[r];
     ch[r] = ch[l];
     ch[l] = c;
     work(ch, l+1, r-1);
