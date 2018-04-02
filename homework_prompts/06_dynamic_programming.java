@@ -19,11 +19,19 @@
 
  class Problems {
 
-   // Time Complexity:
-   // Auxiliary Space Complexity:
-   public static int maxConsecutiveSum(int[] arr) {
+   // Time Complexity: O(n)
+   // Auxiliary Space Complexity: O(1)
+   public static int maxConsecutiveSum(int[] nums) {
      //YOUR WORK HERE
-     return -1;
+        int max = Integer.MIN_VALUE;
+        int sum = 0;
+        for(int i = 0; i < nums.length; i++){            
+            sum += nums[i];
+            max = Math.max(max, sum);
+            if(sum < 0)sum = 0;
+        }
+        
+        return max == Integer.MIN_VALUE? 0 : max;
    }
 
 
@@ -42,11 +50,28 @@
 *  Result: 7
 */
 
-   // Time Complexity:
-   // Auxiliary Space Complexity:
+   // Time Complexity: O(n*m) where n is size or array and m is number of flips allowed
+   // Auxiliary Space Complexity: O(n*m) same as tc
    public static int BitFlip(int[] arr, int N) {
      //YOUR WORK HERE
-     return -1;
+        int[][] dp = new int[N+1][arr.length];
+        int sum = 0;
+        int max = 0;
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] == 1)sum++;
+            else sum = 0;
+            dp[0][i] = sum;
+            max = Math.max(max, dp[0][i]);
+        }
+        
+        for(int i = 1; i < dp.length; i++){
+            for(int j = 0; j < dp[0].length; j++){
+                if(arr[j] == 0)dp[i][j] = (j-1) < 0? 0 : dp[i-1][j-1]+1;
+                else dp[i][j] = dp[i][j-1]+1;
+                max = Math.max(max, dp[i][j]);
+            }
+        }
+     return max;
    }
  }
 
