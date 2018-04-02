@@ -15,18 +15,32 @@
 
 import java.util.*;
 
-// Worse Time Complexity:
-// Worse Auxiliary Space Complexity:
-// Average Time Complexity:
-// Average Auxiliary Space Complexity:
+// Worse Time Complexity: O(n^2)
+// Worse Auxiliary Space Complexity: O(n)
+// Average Time Complexity: O(nlogn)
+// Average Auxiliary Space Complexity: O(n)
 class Mergesort{
   public static int[] compute(int[] input) {
-    return new int[0];
+        if(input.length == 1)return input;
+        int mid = input.length/2;
+        int[] a = compute(Arrays.copyOfRange(input, 0, mid));
+        int[] b = compute(Arrays.copyOfRange(input, mid, input.length));
+        int[] ret = merge(a, b);
+        return ret;
   }
 
   private static int[] merge(int[] array1, int[] array2){
     // YOUR CODE HERE
-    return new int[0];
+      int i = 0, j = 0, index = 0;
+      int[] ret = new int[array1.length + array2.length];
+      while(i < array1.length || j < array2.length){
+          if(j >= array2.length)ret[index] = array1[i++];
+          else if(i >= array1.length)ret[index] = array2[j++];
+          else if(array1[i] < array2[j])ret[index] = array1[i++];
+          else ret[index] = array2[j++];
+          index++;
+      }
+    return ret;
   }
 }
 
