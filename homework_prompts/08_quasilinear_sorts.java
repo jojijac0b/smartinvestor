@@ -93,10 +93,20 @@ class Problems {
   *
   */
 
-  // Time Complexity:
-  // Auxiliary Space Complexity:
+  // Time Complexity: O(n)
+  // Auxiliary Space Complexity: O(1)
   public static int kthSmallest(int[] arr, int k) {
     //YOUR WORK HERE
+      int[] count = new int[8001];
+      for(int i = 0; i < arr.length; i++){
+          count[arr[i]-1000]++;
+      }
+      
+      int sum = 0;
+      for(int i = 0; i < count.length; i++){
+        sum += count[i];
+        if(sum >= k)return i+1000;
+      }
     return -1;
   }
 
