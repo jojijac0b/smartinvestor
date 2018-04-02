@@ -38,27 +38,56 @@ import java.util.*;
 
 class BasicSort {
 
-  // Time Complexity:
-  // Auxiliary Space Complexity:
+  // Time Complexity: O(n^2)
+  // Auxiliary Space Complexity: O(1)
   public static int[] insertion(int[] input) {
     // YOUR WORK HERE
-    return new int[0];
+    for(int i = 1; i < input.length; i++){
+      int j = i;
+      while(j > 0 && input[j] < input[j-1]){
+          int temp = input[j];
+          input[j] = input[j-1];
+          input[j-1] = temp;
+          j--;
+      }
+        
+    }
+    return input;
   }
 
 
-  // Time Complexity:
-  // Auxiliary Space Complexity:
+  // Time Complexity: O(n^2)
+  // Auxiliary Space Complexity: O(1)
   public static int[] selection(int[] input) {
-    // YOUR WORK HERE
-    return new int[0];
+    // YOUR WORK HERE    
+    for(int i = 0; i < input.length; i++){
+        int min = i;
+        for(int j = i; j < input.length; j++){
+            if(input[j] < input[min]) min = j;   
+        }
+        int temp = input[i];
+        input[i] = input[min];
+        input[min] = temp;
+    }
+    return input;
   }
 
 
   // Time Complexity:
   // Auxiliary Space Complexity:
   public static int[] bubble(int[] input) {
-    // YOUR WORK HERE
-    return new int[0];
+    // YOUR WORK HERE    
+    for(int i = 0; i < input.length; i++){
+        for(int j = 1; j < input.length; j++){
+            if(input[j] < input[j-1]){
+                int temp = input[j];
+                input[j] = input[j-1];
+                input[j-1] = temp;
+            }
+        }
+    }
+        
+    return input;
   }
 }
 
