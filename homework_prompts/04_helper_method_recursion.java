@@ -209,7 +209,10 @@ class Power {
     // YOUR WORK HERE
     return -1;
   }
-  
+  public static int work(int a, int b){
+    if(b == 0) return 1;
+    return a * work(a, b-1);
+  }
   
 
 }
@@ -231,8 +234,23 @@ class Merge {
 
   public static int[] compute(int[] arr1, int[] arr2) {
     // YOUR WORK HERE
-    return new int[0];
-  }
+    int[] ret = new int[arr1.length + arr2.length];
+    int i = 0, j = 0;
+    int index = 0;
+    while(i < arr1.length || j < arr2.length){
+      if(i >= arr1.length)ret[index] = arr2[j++];
+      else if(j >= arr2.length) ret[index] = arr1[i++];
+      else{
+        if(arr1[i] < arr2[j]){
+          ret[index] = arr1[i++]; 
+        }
+        else {
+          ret[index] = arr2[j++]; 
+        }
+      }
+      index++;
+    }
+    return ret;
 
 }
 
