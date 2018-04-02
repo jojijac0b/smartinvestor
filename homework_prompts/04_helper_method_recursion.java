@@ -12,22 +12,26 @@ import java.util.*;
 
 /**
  * 1a. What is the term when the recursive call invokes itself more than once.
- *
+ *  multiple recursion
  *
  */
 
 
 /**
  * 1b. List the steps involved to build a Helper Method Recursion algorithm.
- *
- *
+ * 1. instantiate variables
+   2. return results
+   3. create and call helper method
+   4. base case
+   5. recursive case
+ * 
  */
 
 
 /**
  * 1c. Should the recursive case or base case typically be tackled first?
- *
- *
+ * 
+ * base case
  */
 
 
