@@ -14,6 +14,24 @@
  *  Note:     The input string will not contain duplicate characters
  *            The letters in the subset string must be in the same order
  *            as the original input.
+ 
+  
+ [a, b, c]
+ 
+ a ab ac abc
+ b bc
+ 
+ 
+ a
+ ab
+ abc
+ ac  
+ 
+ b
+ bc
+ 
+ c
+ [a, c]
  */
 
 import java.util.*;
@@ -22,10 +40,25 @@ import java.util.ArrayList;
 
 class Powerset {
 
-  public static List<String> compute(String str) {
+  static ArrayList<String> ret;
+    public static List<String> compute(String str) {
     // YOUR WORK HERE
-    return new ArrayList<String>();
+    
+    ret = new ArrayList<String>();
+    work(str, 0, "");
+    return ret;
   }
+    
+    public static void work(String s, int index, String temp){
+        if(index >= s.length()){
+            ret.add(new String(temp));
+            return;
+        }
+        
+        work(s, index+1, temp+s.charAt(index));
+        work(s, index+1, temp);
+        
+    }
 
 }
 
@@ -62,8 +95,22 @@ class Powerset {
 class LatticePaths {
   public static int compute(int m, int n) {
     // YOUR WORK HERE
-    return -1;
+       work(0,0,m,n);
+    return ret;
   }
+    static int ret = 0;
+    
+    public static void work(int i, int j, int m, int n){
+        if(i == m && j == n){
+            ret++;
+            return;
+        }
+        if(i > m || j > n)return;
+        
+        work(i+1, j, m, n);
+        work(i, j+1, m, n);
+    }
+    
 }
 
 
