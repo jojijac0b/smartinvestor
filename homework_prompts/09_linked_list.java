@@ -71,34 +71,113 @@ class LinkedList {
   public ListNode head;
   public ListNode tail;
 
-  // Time Complexity:
-  // Auxiliary Space Complexity:
+  // Time Complexity: O(1)
+  // Auxiliary Space Complexity: O(1)
   public void append(int value){
     // YOUR WORK HERE
+    ListNode n = new ListNode(value);
+    
+    if(head == null){
+      head = tail = n;
+    }
+    else{
+      tail.next = n;
+      tail = n;
+    }
+    length++;
   }
 
 
-  // Time Complexity:
-  // Auxiliary Space Complexity:
+  // Time Complexity: O(n)
+  // Auxiliary Space Complexity: O(1)
   public void insert(int value, int index){
     // YOUR WORK HERE
+    if(index >= length){
+      throw new IndexOutOfBoundsException("Index " + index + " is out of bounds!");
+    }
+    ListNode n = new ListNode(value);
+
+    if(index == 0){
+      n.next = head;
+      head = n;
+      return;
+    }
+    
+    ListNode prev = null;
+    ListNode runner = head;
+    int i = 0;
+    
+    while(i < index){
+      prev = runner;
+      runner = runner.next;
+      i++;
+    }
+    
+    prev.next = n;
+    n.next = runner;
+    length++;
+    
   }
 
+  /*abstract
+  
+    0    1    2    3    4
+    1 -> 2 -> 3 -> 4 -> 5
+  
+  */
+  
 
   // Time Complexity:
   // Auxiliary Space Complexity:
   public void delete(int index){
     // YOUR WORK HERE
+    if(index >= length){
+      throw new IndexOutOfBoundsException("Index " + index + " is out of bounds!");
+    }
+    if(index == 0){     
+      head = head.next;
+      return;
+    }
+    
+    ListNode prev = null;
+    ListNode runner = head;
+    int i = 0;
+    
+    while(i < index){
+      prev = runner;
+      runner = runner.next;
+      i++;
+    }
+    
+    prev.next = runner.next;
+    length--;
   }
 
 
-  // Time Complexity:
-  // Auxiliary Space Complexity:
+  // Time Complexity: O(n)
+  // Auxiliary Space Complexity: O(1)
   public boolean contains(int value){
     // YOUR WORK HERE
+    ListNode runner = head;
+    
+    while(runner != null){
+      if(runner.value == value)return true;
+      runner = runner.next;
+    }
+    
     return false;
   }
+  
+  public void print(){
+    ListNode runner = head;
+    while(runner != null){
+      System.out.print(runner.value + " ");
+      runner = runner.next;
+    }
+    System.out.println();
+  }
 }
+
 
 
 ////////////////////////////////////////////////////////////
