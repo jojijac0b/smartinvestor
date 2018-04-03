@@ -61,7 +61,8 @@ class ListNode {
   public ListNode next;
 
   public ListNode(int value){
-    // YOUR WORK HERE
+    this.value = value;
+    next = null;
   }
 }
 
