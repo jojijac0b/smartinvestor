@@ -75,44 +75,60 @@ class Graph {
 
   public Map<Integer, List<Integer>> storage = new HashMap<>();
 
-  //   Time Complexity:
-  //   Auxiliary Space Complexity:
+  //   Time Complexity: O(1)
+  //   Auxiliary Space Complexity: O(1)
   public boolean addVertex(Integer id) {
-    // YOUR WORK HERE
-    return true;
+    if(!storage.containsKey(id)){
+        storage.put(id, new ArrayList<Integer>());
+        return true;
+    }
+    return false;
   }
 
   public boolean removeVertex(Integer id) {
     // YOUR WORK HERE
+    if(!storage.containsKey(id))return false;
+    storage.remove(id);
     return true;
   }
 
-  //   Time Complexity:
-  //   Auxiliary Space Complexity:
+  //   Time Complexity: O(1)
+  //   Auxiliary Space Complexity: O(1)
   public boolean addEdge(Integer id1, Integer id2) {
     // YOUR WORK HERE
+    if(!storage.containsKey(id1) || !storage.containsKey(id2)){
+        return false;
+    }
+    
+    storage.get(id1).add(id2);
     return true;
   }
 
-  // Time Complexity:
-  // Auxiliary Space Complexity:
+  // Time Complexity: O(1)
+  // Auxiliary Space Complexity: O(1)
   public boolean removeEdge(Integer id1, Integer id2) {
     // YOUR WORK HERE
+    if(!storage.containsKey(id1) || !storage.containsKey(id2)){
+        return false;
+    }
+    
+    storage.get(id1).remove(id2);
     return true;
   }
 
-  //   Time Complexity:
-  //   Auxiliary Space Complexity:
+  //   Time Complexity: O(1)
+  //   Auxiliary Space Complexity: O(1)
   public boolean isVertex(Integer id) {
-    // YOUR WORK HERE
-    return true;
+    return storage.containsKey(id);
   }
 
-  // Time Complexity:
-  // Auxiliary Space Complexity:
+  // Time Complexity: O(1)
+  // Auxiliary Space Complexity: O(1)
   public List<Integer> neighbors(Integer id) {
-    // YOUR WORK HERE
-    return new ArrayList<Integer>();
+    if(!storage.containsKey(id)){
+        throw new IndexOutOfBoundsException("Vertex " + id + " does not exist in graph");
+    }
+    return storage.get(id);
   }
 
 }
