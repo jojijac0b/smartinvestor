@@ -60,13 +60,22 @@ import java.util.*;
 
 
 class HashTable {
-
-  public int buckets = 8;
+  
+  class Entry {
+      String key;
+      String value;
+      public Entry(String key, String value){
+          this.key = key;
+          this.value = value;
+      }
+  }  
+  
+  public int buckets = 1;
   public int size = 0;
-  public List[] storage = new ArrayList[buckets];
+  public List<Entry>[] storage = new ArrayList[buckets];
 
-  // Time Complexity:
-  // Auxiliary Space Complexity:
+  // Time Complexity: O(n), n = size of key
+  // Auxiliary Space Complexity: O(1)
   public int hash(String key, int buckets) {
     int hash = 5381;
     for (int i = 0; i < key.length(); i++) {
@@ -75,29 +84,67 @@ class HashTable {
     return hash % buckets;
   }
 
-  // Amortized Time Complexity (amortized):
-  // Auxiliary Space Complexity (amortized):
+  // Amortized Time Complexity (amortized): O(n)
+  // Auxiliary Space Complexity (amortized): O(1)
   public void insert(String key, String value) {
     // YOUR WORK HERE
+    if(size >= (buckets * 0.75))resize();
+    size++;
+
+    int index = hash(key, buckets);
+    if(storage[index] == null)storage[index] = new ArrayList<Entry>();
+    for(Entry i : storage[index]){
+        if(i.key == key){
+            i.value = value;
+            return;
+        }
+    }
+    storage[index].add(new Entry(key, value));
   }
 
-  // Time Complexity:
-  // Auxiliary Space Complexity:
+  // Time Complexity: O(n), n = size of list mapped to hash(key)
+  // Auxiliary Space Complexity: O(1)
   public String get(String key) {
     // YOUR WORK HERE
+    for(Entry i : storage[hash(key, buckets)]){
+        if(i.key == key){
+            return i.value;
+        }
+    }
     return null;
   }
 
-  // Amortized Time Complexity (amortized):
-  // Auxiliary Space Complexity (amortized):
+  // Amortized Time Complexity (amortized): O(n), n = size of list mapped to hash(key)
+  // Auxiliary Space Complexity (amortized): O(1)
   public void remove(String key) {
     // YOUR WORK HERE
+    Entry toRemove = null;
+    for(Entry i : storage[hash(key, buckets)]){
+        if(i.key == key){
+            toRemove = i;
+            break;
+        }
+    }
+      
+    if(toRemove != null)storage[hash(key, buckets)].remove(toRemove);
   }
 
-  // Time Complexity:
-  // Auxiliary Space Complexity:
+  // Time Complexity: O(n), n = number of elements in storage
+  // Auxiliary Space Complexity: O(n)
   public void resize() {
     // YOUR WORK HERE
+    List[] biggerList = new List[buckets*2];
+    buckets *= 2;
+    
+    for(int i = 0; i < storage.length; i++){
+        if(storage[i] == null)continue;
+        for(Entry j : storage[i]){
+            int index = hash(j.key, buckets);
+            if(biggerList[index] == null)biggerList[index] = new ArrayList<Entry>();
+            biggerList[index].add(j);
+        }
+    }
+    storage = biggerList;
   }
 }
 
