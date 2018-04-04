@@ -71,26 +71,80 @@ class Trie {
 
   public boolean insert(String word) {
     // YOUR WORK HERE
-    return false;
+    TrieNode n = root;
+    
+    for(char c : word.toCharArray()){
+        if(!n.next.containsKey(c)){
+            n.next.put(c, new TrieNode(c));
+        }
+        n = n.next.get(c);
+    }
+    
+    n.end = true;
+    return true;
   }
 
   public boolean isWord(String word) {
     // YOUR WORK HERE
-    return false;
+    TrieNode n = root;
+    
+    for(char c : word.toCharArray()){
+        if(!n.next.containsKey(c))return false;
+        n = n.next.get(c);
+    }
+      
+    return n != null && n.end;
   }
 
   public boolean isPrefix(String prefix) {
     // YOUR WORK HERE
-    return false;
+    TrieNode n = root;
+    
+    for(char c : prefix.toCharArray()){
+        if(!n.next.containsKey(c))return false;
+        n = n.next.get(c);
+    }
+      
+    return n != null && n.next.size() > 0;
   }
 
   public ArrayList<String> startsWith(String prefix) {
-    // YOUR WORK HERE
-    return new ArrayList<String>();
+    TrieNode n = root;
+    ArrayList<String> ret = new ArrayList<>();
+      
+    for(char c : prefix.toCharArray()){
+        if(!n.next.containsKey(c))return ret;
+        n = n.next.get(c);
+    }
+    work(n, prefix.substring(0,prefix.length()-1), ret);
+    return ret;
   }
+    
+  public void work(TrieNode n, String s, ArrayList<String> ret){
+      s += n.value;
+      if(n.end){
+          ret.add(new String(s));
+      }
+      
+      for(char c : n.next.keySet()){
+          work(n.next.get(c), s, ret);
+      }
+      s = s.substring(0, s.length()-1);
+  }
+    
 
   public void remove(String word) {
     // YOUR WORK HERE
+    TrieNode n = root;
+      
+    for(char c : word.toCharArray()){
+        if(n.next.get(c).next.size() == 0){
+            n.next.remove(c);
+            break;
+        }
+        n = n.next.get(c);
+    }
+      
   }
 
 }
