@@ -40,11 +40,21 @@
 
  class Problems {
 
-   // Time Complexity:
-   // Auxiliary Space Complexity:
+   // Time Complexity: O(n)
+   // Auxiliary Space Complexity: O(n)
    public static int latticePaths(int n) {
      //YOUR WORK HERE
-     return -1;
+     int[][] dp = new int[n+1][n+1];
+     
+     for(int i = 0; i < dp.length; i++){
+       for(int j = 0; j < dp[0].length; j++){
+         if(i == 0 || j == 0)dp[i][j] = 1;
+         else dp[i][j] = dp[i-1][j] + dp[i][j-1];
+       }
+     }
+        
+    
+     return dp[n][n];
    }
 
 
@@ -63,11 +73,19 @@
   *  Output:Integer
   */
 
-   // Time Complexity:
-   // Auxiliary Space Complexity:
+   // Time Complexity: O(n)
+   // Auxiliary Space Complexity: O(n)
    public static int minStepsToOne(int n) {
      //YOUR WORK HERE
-     return -1;
+     int[] dp = new int[n+1];
+     for(int i = 2; i < dp.length; i++){
+         dp[i] = dp[i-1]+1;
+         if(i%3 == 0)dp[i] = Math.min(dp[i], dp[i/3]+1);
+         if(i%2 == 0)dp[i] = Math.min(dp[i], dp[i/2]+1);
+     }
+        
+    
+     return dp[n];
    }
 
  }
