@@ -24,9 +24,43 @@
  class Quicksort {
 
    public static int[] compute(int[] input) {
-     // YOUR CODE HERE
-     return new int[0];
+     
+     work(input, 0, input.length-1);
+     return input;
    }
+
+    public static void work(int[] nums, int left, int right) {
+     if(left >= right){
+         return;
+     }
+     int pivot = partition(nums, left, right);
+    
+     work(nums, left, pivot-1);
+     work(nums, pivot, right);
+   }
+    
+    public static int partition(int[] nums, int left, int right){
+        int pivot = nums[left];
+        
+        int i = left+1;
+        int j = i;
+        
+        while(j <= right){
+            if(nums[j] < pivot){
+                swap(i, j, nums);
+                i++;
+            }
+            j++;
+        }
+        swap(left, i-1, nums);
+        return i;
+    }
+    
+    public static void swap(int i, int j, int[] nums){
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
 
  }
 
