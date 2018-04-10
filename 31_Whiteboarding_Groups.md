@@ -50,19 +50,19 @@ __Group 1:__ Brian Haller, Technical Coach
 
 __Group 2:__ Callan Bush, Markus  Fuchs
 
-__Group 3:__ Jason Hsu, Siddharth Joshi
+__Group 3:__ Rishi Sachdev, Siddharth Joshi
 
 __Group 4:__ Andrew Koines, Julius Buckley
 
-__Group 5:__ Adilene Constante, Yudi Sutanto
+__Group 5:__ Steven De Gryze, Yudi Sutanto
 
 __Group 6:__ Joji Jacob, Clifford Tham
 
-__Group 7:__ Ching-Lan Chen, Steven De Gryze
+__Group 7:__ Hai Lin Helena Wu, Adilene Constante
 
 __Group 8:__ Daniel Liang, Sean Taylor
 
-__Group 9:__ Ramya Tata, Rishi Sachdev
+__Group 9:__ Ramya Tata, Jason Hsu
 
 ##### Online Groups:
 <br />
@@ -70,7 +70,7 @@ __Group 1:__ Caleb Ferrell, Mallori Harrell
 
 __Group 2:__ Christian Van, Erik Salazar
 
-__Group 3:__ Hai Lin Helena Wu, Paul Nguyen
+__Group 3:__ Ching-Lan Chen, Paul Nguyen
 
 __Group 4:__ Anna-Brit Schlaeper, Srikant Vadrevu
 
@@ -88,7 +88,7 @@ __Group 7:__ Faraaz Ismail, Sid Tantia
 <br />
 __Group 1:__ Callan Bush, Technical Coach
 
-__Group 2:__ Ching-Lan Chen, Sean Taylor
+__Group 2:__ Hai Lin Helena Wu, Sean Taylor
 
 __Group 3:__ Brian Haller, Rishi Sachdev
 
@@ -108,7 +108,7 @@ __Group 9:__ Jason Hsu, Clifford Tham
 <br />
 __Group 1:__ Anna-Brit Schlaeper, Paul Nguyen
 
-__Group 2:__ Christian Van, Hai Lin Helena Wu
+__Group 2:__ Christian Van, Ching-Lan Chen
 
 __Group 3:__ Isaac Durant, Srikant Vadrevu
 
@@ -136,7 +136,7 @@ __Group 4:__ Jason Hsu, Sean Taylor
 
 __Group 5:__ Adilene Constante, Julius Buckley
 
-__Group 6:__ Ching-Lan Chen, Rishi Sachdev
+__Group 6:__ Hai Lin Helena Wu, Rishi Sachdev
 
 __Group 7:__ Andrew Koines, Daniel Liang
 
@@ -146,7 +146,7 @@ __Group 9:__ Siddharth Joshi, Technical Coach
 
 ##### Online Groups:
 <br />
-__Group 1:__ Hai Lin Helena Wu, Srikant Vadrevu
+__Group 1:__ Ching-Lan Chen, Srikant Vadrevu
 
 __Group 2:__ Caleb Ferrell, Faraaz Ismail
 
