@@ -82,7 +82,7 @@ __Group 7:__ Hai Lin Helena Wu, Mallori Harrell
 
 ##### Onsite Groups:
 <br />
-__Group 2:__ Ching-Lan Chen, Siddharth Joshi
+__Group 2:__ Hai Lin Helena Wu, Siddharth Joshi
 
 __Group 3:__ Adilene Constante, Yudi Sutanto
 
@@ -104,7 +104,7 @@ __Group 1:__ Sid Tantia, Faraaz Ismail
 
 __Group 2:__ Erik Salazar, Srikant Vadrevu
 
-__Group 3:__ Isaac Durant, Hai Lin Helena Wu
+__Group 3:__ Isaac Durant, Ching-Lan Chen
 
 __Group 4:__ Mallori Harrell, Oliver Hellwig
 
@@ -132,7 +132,7 @@ __Group 6:__ Jason Hsu, Daniel Liang
 
 __Group 7:__ Brian Haller, Steven De Gryze
 
-__Group 8:__ Callan Bush, Ching-Lan Chen
+__Group 8:__ Callan Bush, Hai Lin Helena Wu
 
 __Group 9:__ Ramya Tata, Rishi Sachdev, Andrew Koines
 
@@ -146,7 +146,7 @@ __Group 3:__ Eddie Martin, Suketu Patel
 
 __Group 4:__ Caleb Ferrell, Erik Salazar
 
-__Group 5:__ Hai Lin Helena Wu, Srikant Vadrevu
+__Group 5:__ Ching-Lan Chen, Srikant Vadrevu
 
 __Group 6:__ Faraaz Ismail, Paul Nguyen
 
@@ -164,7 +164,7 @@ __Group 3:__ Markus  Fuchs, Joji Jacob
 
 __Group 4:__ Clifford Tham, Siddharth Joshi
 
-__Group 5:__ Ching-Lan Chen, Sean Taylor
+__Group 5:__ Hai Lin Helena Wu, Sean Taylor
 
 __Group 6:__ Callan Bush, Steven De Gryze
 
@@ -184,7 +184,7 @@ __Group 3:__ Caleb Ferrell, Srikant Vadrevu
 
 __Group 4:__ Christian Van, Isaac Durant
 
-__Group 5:__ Anna-Brit Schlaeper, Hai Lin Helena Wu
+__Group 5:__ Anna-Brit Schlaeper, Ching-Lan Chen
 
 __Group 6:__ Oliver Hellwig, Suketu Patel
 
@@ -196,7 +196,7 @@ __Group 7:__ Eddie Martin, Paul Nguyen
 
 ##### Onsite Groups:
 <br />
-__Group 2:__ Brian Haller, Ching-Lan Chen
+__Group 2:__ Brian Haller, Hai Lin Helena Wu
 
 __Group 3:__ Daniel Liang, Yudi Sutanto
 
@@ -214,7 +214,7 @@ __Group 9:__ Callan Bush, Siddharth Joshi, Adilene Constante
 
 ##### Online Groups:
 <br />
-__Group 1:__ Erik Salazar, Hai Lin Helena Wu
+__Group 1:__ Erik Salazar, Ching-Lan Chen
 
 __Group 2:__ Christian Van, Mallori Harrell
 
@@ -234,7 +234,7 @@ __Group 7:__ Faraaz Ismail, Srikant Vadrevu
 
 ##### Onsite Groups:
 <br />
-__Group 2:__ Markus  Fuchs, Ching-Lan Chen
+__Group 2:__ Markus  Fuchs, Hai Lin Helena Wu
 
 __Group 3:__ Brian Haller, Ramya Tata
 
@@ -252,7 +252,7 @@ __Group 9:__ Julius Buckley, Yudi Sutanto, Andrew Koines
 
 ##### Online Groups:
 <br />
-__Group 1:__ Hai Lin Helena Wu, Eddie Martin
+__Group 1:__ Ching-Lan Chen, Eddie Martin
 
 __Group 2:__ Anna-Brit Schlaeper, Isaac Durant
 
@@ -276,7 +276,7 @@ __Group 1:__ Adilene Constante, Joji Jacob
 
 __Group 2:__ Callan Bush, Yudi Sutanto
 
-__Group 3:__ Ching-Lan Chen, Rishi Sachdev
+__Group 3:__ Hai Lin Helena Wu, Rishi Sachdev
 
 __Group 4:__ Jason Hsu, Siddharth Joshi
 
@@ -298,7 +298,7 @@ __Group 3:__ Erik Salazar, Suketu Patel
 
 __Group 4:__ Christian Van, Faraaz Ismail
 
-__Group 5:__ Hai Lin Helena Wu, Isaac Durant
+__Group 5:__ Ching-Lan Chen, Isaac Durant
 
 __Group 6:__ Mallori Harrell, Paul Nguyen
 
