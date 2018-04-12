@@ -52,10 +52,14 @@ class Problems {
  *          10
  */
 
-  // Time Complexity:
-  // Auxiliary Space Complexity:
+  // Time Complexity: O(N)
+  // Auxiliary Space Complexity: O(1)
   public static void printForward(ListNode node) {
     // YOUR WORK HERE
+    
+    while(node != null){
+      System.out.println(node.value); 
+    }
   }
 
 
@@ -74,10 +78,17 @@ class Problems {
  *          1
  */
 
-  // Time Complexity:
-  // Auxiliary Space Complexity:
+  // Time Complexity: O(n)
+  // Auxiliary Space Complexity: O(n) stack space
   public static void printBackward(ListNode node) {
     // YOUR WORK HERE
+    if(node == null){
+      return;  
+    }
+    printBackward(node.next);
+    System.out.println(node.value);
+      
+      
   }
 
 
@@ -101,7 +112,18 @@ class Problems {
   // Auxiliary Space Complexity:
   public static ListNode reverse(ListNode node) {
     // YOUR WORK HERE
-    return null;
+    
+    ListNode prev = null;
+    LisNode curr = node;
+    
+    while(curr != null){
+      ListNode next = curr.next;
+      curr.next = prev;
+      prev = curr;
+      curr = next;      
+    }
+    
+    return prev;
   }
 
 
@@ -129,7 +151,69 @@ class Problems {
   // Auxiliary Space Complexity:
   public static ListNode swap(ListNode head, int a, int b) {
     // YOUR WORK HERE
-    return null;
+    
+    ListNode p1 = new ListNode(Integer.MAX_VALUE);
+    ListNode p2 = null;
+    
+    ListNode c1 = null;
+    ListNode c2  = null;
+    
+    ListNode c = head;
+    ListNode p = null;
+    
+    while(c != null){
+      if(c.value == a || c.value == b){
+        if(p1 != null && p1.value == Integer.MAX_VALUE){
+          p1 = p;
+          c1 = c;
+        }
+        else{
+          
+          p2 = p;
+          c2 = c;
+        }
+      } 
+      p = c;
+      c = c.next;
+    }
+    
+    if(c1.next == c2){
+        if(c1 == head){
+            c1.next = c2.next;
+            c2.next = c1;
+            return c2;
+            
+        }
+        c1.next = c2.next;
+        p1.next = c2;
+        c2.next = c1;
+        return head;
+    }
+    
+    return swapNodes(p1,c1,p2,c2,head);
+  }
+  
+  public static ListNode swapNodes(ListNode p1, ListNode c1, ListNode p2, ListNode c2, ListNode head){
+      
+    //System.out.println(c1.value + " " + c2);
+    ListNode ret = head;
+    if(c1 == head){
+     ListNode next = c1.next;
+     c1.next = c2.next;
+     c2.next = next;
+     p2.next = c1;
+     return c2;
+    }
+    
+    ListNode n1 = c1.next;
+    ListNode n2 = c2.next;
+    
+    p1.next = c2;
+    c2.next = n1;
+    p2.next = c1;
+    c1.next = n2;
+    
+    return head;
   }
 
 
