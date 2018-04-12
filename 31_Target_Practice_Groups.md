@@ -140,7 +140,7 @@ __Group 9:__ Ramya Tata, Rishi Sachdev, Andrew Koines
 <br />
 __Group 1:__ Isaac Durant, Mallori Harrell
 
-__Group 2:__ Anna-Brit Schlaeper, Oliver Hellwig
+__Group 2:__ Anna-Brit Schlaeper, Oliver Hellwig, Andri	Antoniades
 
 __Group 3:__ Eddie Martin, Suketu Patel
 
@@ -182,7 +182,7 @@ __Group 2:__ Faraaz Ismail, Mallori Harrell
 
 __Group 3:__ Caleb Ferrell, Srikant Vadrevu
 
-__Group 4:__ Christian Van, Isaac Durant
+__Group 4:__ Christian Van, Isaac Durant, Andri	Antoniades
 
 __Group 5:__ Anna-Brit Schlaeper, Ching-Lan Chen
 
@@ -216,7 +216,7 @@ __Group 9:__ Callan Bush, Siddharth Joshi, Adilene Constante
 <br />
 __Group 1:__ Erik Salazar, Ching-Lan Chen
 
-__Group 2:__ Christian Van, Mallori Harrell
+__Group 2:__ Christian Van, Mallori Harrell, Andri	Antoniades
 
 __Group 3:__ Caleb Ferrell, Paul Nguyen
 
@@ -264,7 +264,7 @@ __Group 5:__ Caleb Ferrell, Paul Nguyen
 
 __Group 6:__ Erik Salazar, Oliver Hellwig
 
-__Group 7:__ Christian Van, Suketu Patel
+__Group 7:__ Christian Van, Suketu Patel, Andri	Antoniades
 
 - - -
 
@@ -292,7 +292,7 @@ __Group 8:__ Andrew Koines, Brian Haller, Daniel Liang
 <br />
 __Group 1:__ Anna-Brit Schlaeper, Caleb Ferrell
 
-__Group 2:__ Sid Tantia, Srikant Vadrevu
+__Group 2:__ Sid Tantia, Srikant Vadrevu, Andri	Antoniades
 
 __Group 3:__ Erik Salazar, Suketu Patel
 

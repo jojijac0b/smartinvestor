@@ -80,6 +80,8 @@ __Group 6:__ Isaac Durant, Suketu Patel
 
 __Group 7:__ Faraaz Ismail, Sid Tantia
 
+__Group 8:__ Andri	Antoniades, Technical Mentor
+
 - - -
 
 ### Week 4
@@ -112,13 +114,15 @@ __Group 2:__ Christian Van, Ching-Lan Chen
 
 __Group 3:__ Isaac Durant, Srikant Vadrevu
 
-__Group 4:__ Oliver Hellwig, Mallori Harrell
+__Group 4:__ Oliver Hellwig, Technical Mentor
 
 __Group 5:__ Eddie Martin, Sid Tantia
 
 __Group 6:__ Faraaz Ismail, Erik Salazar
 
 __Group 7:__ Caleb Ferrell, Suketu Patel
+
+__Group 8:__ Andri	Antoniades, Mallori Harrell
 
 - - -
 
@@ -154,10 +158,12 @@ __Group 3:__ Anna-Brit Schlaeper, Mallori Harrell
 
 __Group 4:__ Eddie Martin, Paul Nguyen
 
-__Group 5:__ Erik Salazar, Sid Tantia
+__Group 5:__ Andri	Antoniades, Sid Tantia
 
 __Group 6:__ Isaac Durant, Oliver Hellwig
 
 __Group 7:__ Christian Van, Suketu Patel
+
+__Group 8:__ Erik Salazar, Technical Mentor
 
 - - -
