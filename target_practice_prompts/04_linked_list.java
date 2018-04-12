@@ -176,7 +176,7 @@ class Problems {
       p = c;
       c = c.next;
     }
-    
+    if(c2 == null) return head;
     if(c1.next == c2){
         if(c1 == head){
             c1.next = c2.next;
