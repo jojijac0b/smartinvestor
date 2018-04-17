@@ -100,10 +100,22 @@ class Problems {
     *  NOTE: You may use an array or linked list for your queue.
     *  NOTE: Confirm with your answer from Problem 2a.
     */
-  public static List bfs(TreeNode node) {
-    // YOUR WORK HERE
-    return new ArrayList();
-  }
+  public static List<Integer> bfs(TreeNode node) {
+        // YOUR WORK HERE
+        List<Integer> ret = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        
+        queue.add(node);
+        
+        while(!queue.isEmpty()){
+            TreeNode a = queue.remove();
+            ret.add(a.value);
+            if(a.left != null)queue.add(a.left);
+            if(a.right != null)queue.add(a.right);
+        }
+        
+        return ret;
+    }
 
 
   /**
