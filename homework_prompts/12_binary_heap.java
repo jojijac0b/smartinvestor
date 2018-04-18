@@ -78,48 +78,65 @@ class Heap {
   List<Integer> storage;
   String type;
 
-
   public Heap(String type) {
     //YOUR WORK HERE
+   this.type = type;   
   }
 
-  // Time Complexity:
-  // Auxiliary Space Complexity:
+  // Time Complexity: O(1)
+  // Auxiliary Space Complexity: O(1)
   public boolean compare(int a, int b){
     //YOUR WORK HERE
-    return false;
+   if(type.equals("min"))return a < b
+   else return a > b;
   }
 
-  // Time Complexity:
-  // Auxiliary Space Complexity:
+  // Time Complexity:O(1)
+  // Auxiliary Space Complexity:O(1)
   public void swap(int index1, int index2){
     //YOUR WORK HERE
+   int temp = storage.get(index1);
+   storage.set(index1, storage.get(index1));
+   storage.set(index2, temp);
   }
 
-  // Time Complexity:
-  // Auxiliary Space Complexity:
+  // Time Complexity: O(1)
+  // Auxiliary Space Complexity: O(1)
   public int peak(){
     //YOUR WORK HERE
-    return -1;
+   
+    return storage.get(0);
   }
 
   // Time Complexity:
   // Auxiliary Space Complexity:
   public int size(){
     //YOUR WORK HERE
-    return -1;
+    return return storage.size();
   }
 
   // Time Complexity:
   // Auxiliary Space Complexity:
   public void insert(int value){
     //YOUR WORK HERE
+   storage.add(value);
+   bubbleUp(storage.size()-1);
   }
 
-  // Time Complexity:
-  // Auxiliary Space Complexity:
+  // Time Complexity: O(logn)
+  // Auxiliary Space Complexity: O(logn)
   public void bubbleUp(int index){
     //YOUR WORK HERE
+    if(type.equals("min")){
+      while(index != 0 && storage.get(index/2) > storage.get(index)){
+        swap(index, index/2);
+      }
+    }
+   else {
+     while(index != 0 && storage.get(index/2) < storage.get(index)){
+        swap(index, index/2);
+      }
+   }
   }
 
   // Time Complexity:
