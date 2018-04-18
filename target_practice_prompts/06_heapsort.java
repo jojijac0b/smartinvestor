@@ -25,7 +25,56 @@ import java.util.*;
 class Heapsort {
   public static int[] compute(int[] arr) {
     // YOUR WORK HERE
-    return new int[0];
+    for(int i = arr.length-1; i >= 0; i--){
+        bubbleDown(i, arr, arr.length);
+    }
+    
+    int size = arr.length-1;
+      
+    while(size > 0){
+        swap(0, size, arr);
+        bubbleDown(0, arr, size);
+        size--;
+    }
+      
+    
+    return arr;
+  }
+    
+  public static void bubbleDown(int index, int[] nums, int size){
+      while(true){          
+          int l = (2*index)+1;
+          int r = (2*index)+2;
+          if(l >= size && r >= size)break;
+          if((l < size && r < size)){
+              if(nums[l] < nums[index] && nums[r] < nums[index]){
+                  break;
+              }
+              else{
+                  if(nums[l] > nums[r]){
+                      swap(index, l, nums);
+                      index = l;
+                  }
+                  else {
+                     swap(index, r, nums);
+                     index = r;    
+                  }
+                  
+              }
+          }
+          else {
+              if(nums[index] < nums[l]){
+                  swap(index, l, nums);
+              }
+              else break;
+          }
+      }
+  }
+    
+  public static void swap(int a, int b, int[] nums){
+      int temp = nums[a];
+      nums[a] = nums[b];
+      nums[b] = temp;
   }
 
 }
@@ -84,7 +133,6 @@ class Main {
         int[] solution = new int[1000];
         System.arraycopy(input, 0, solution, 0, input.length);
         input = heapsort.compute(input);
-
         Arrays.sort(solution);
         return isSorted(input) && arraysEqual(input, solution);
       }
