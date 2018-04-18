@@ -88,7 +88,7 @@ __Group 8:__ Andri	Antoniades, Technical Mentor
 
 ##### Onsite Groups:
 <br />
-__Group 1:__ Callan Bush, Technical Coach
+__Group 1:__ Callan Bush, Mallori Harrell
 
 __Group 2:__ Hai Lin Helena Wu, Sean Taylor
 
@@ -122,7 +122,7 @@ __Group 6:__ Faraaz Ismail, Erik Salazar
 
 __Group 7:__ Caleb Ferrell, Suketu Patel
 
-__Group 8:__ Andri	Antoniades, Mallori Harrell
+__Group 8:__ Callan Bush, Mallori Harrell
 
 - - -
 
