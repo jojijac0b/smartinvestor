@@ -72,7 +72,21 @@ class Problems {
 
    public static List<Integer> bfs(Vertex vertex) {
      // YOUR WORK HERE
-     return Arrays.asList(0);
+     Queue<Vertex> queue = new LinkedList<Vertex>();
+     HashSet<Integer> visited = new HashSet<Integer>();
+     List<Integer> ret = new ArrayList<Integer>();
+     
+     queue.add(vertex);
+     
+     while(!queue.isEmpty()){
+        Vertex v = queue.remove();
+        visited.add(v.id);
+        ret.add(v.id);
+        for(Vertex i : v.edges){
+          if(!visited.contains(i.id))queue.add(i); 
+        }
+     }
+     return ret;
    }
 
    /**
