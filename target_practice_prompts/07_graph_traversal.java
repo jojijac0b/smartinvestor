@@ -80,6 +80,7 @@ class Problems {
      
      while(!queue.isEmpty()){
         Vertex v = queue.remove();
+        if(visited.contains(v.id)) continue;
         visited.add(v.id);
         ret.add(v.id);
         for(Vertex i : v.edges){
